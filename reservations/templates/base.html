@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Reservation System</title>
+</head>
+
+<body>
+    <header class="header slider-fade small-height-align" data-scroll-index="0">
+
+        <!-- start navbar -->
+        <nav class="navbar navbar-expand-lg alt-font">
+            <div class="container sm-padding-10px-tb sm-padding-15px-lr">
+
+                <!-- start logo -->
+                <a class="logo active" href="javascript:void(0);" data-scroll-nav="0">
+                    <img src="{% static 'img/logo-light.png' %}" alt="Cefrax - Restaurante y Cafe"
+                        title="Cefrax - Restaurante y Cafe">
+                </a>
+                <!-- end Logo -->
+
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- navbar links -->
+                <div class="navbar-collapse collapse" id="navbarContent" style="">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'index' %}" >Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-scroll-nav="1">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-scroll-nav="2">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-scroll-nav="3">El Chef</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-scroll-nav="5">La comida</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-scroll-nav="7">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn theme small" href="{% url 'reserve' %}" >Reservaciones</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end navbar links -->
+
+            </div>
+            <a href="javascript:void(0)" class="sidemenu_btn sm-display-none" id="sidebar_toggle">
+                    <span></span> <span></span> <span></span>
+                </a>
+        </nav>
+        <!-- end navbar  -->
+
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="owl-carousel owl-theme width-100">
+                        <div class="text-center item bg-img" data-overlay-dark="7" data-background="{% static 'img/bg1.jpg' %}">
+                            <div class="absolute-middle-center caption">
+                                <div class="overflow-hidden">
+                                    <h3 class="title-font text-theme-color font-size28 sm-font-size18 no-margin">Bienvenido al</h3>
+                                    <h1 class="banner-headline clip text-white">Restaurante &amp; Café</h1>
+                                    <p class="margin-30px-bottom sm-margin-20px-bottom xs-display-none text-white">Sabrosa, deliciosa comida preparada en el restaurante. Respetamos su tiempo.</p>
+                                    <a href="javascript:void(0);" data-scroll-nav="2" class="btn theme">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center item bg-img" data-overlay-dark="8" data-background="{% static 'img/bg2.jpg' %}">
+                            <div class="absolute-middle-center caption">
+                                <div class="overflow-hidden">
+                                    <h3 class="title-font text-theme-color font-size28 sm-font-size18 no-margin">Comida con</h3>
+                                    <h1 class="banner-headline clip text-white">Posibilidades infinitas</h1>
+                                    <p class="margin-30px-bottom sm-margin-20px-bottom xs-display-none text-white">abrosa, deliciosa comida preparada en el restaurante. Respetamos su tiempo.</p>
+                                    <a href="javascript:void(0);" data-scroll-nav="2" class="btn theme">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center item bg-img" data-overlay-dark="8" data-background="{% static 'img/bg3.jpg' %}">
+                            <div class="absolute-middle-center caption">
+                                <div class="overflow-hidden">
+                                    <h3 class="title-font text-theme-color font-size28 sm-font-size18 no-margin">Para ustedes</h3>
+                                    <h1 class="banner-headline clip text-white">Deliciosa comida</h1>
+                                    <p class="margin-30px-bottom sm-margin-20px-bottom xs-display-none text-white">abrosa, deliciosa comida preparada en el restaurante. Respetamos su tiempo.</p>
+                                    <a href="javascript:void(0);" data-scroll-nav="2" class="btn theme">Ver mas</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+        <!-- start sidemenu -->
+        <div class="side-menu black alt-font">
+                <div class="inner-wrapper">
+                    <span class="btn-close" id="btn_sidebar_colse"></span>
+                    <nav class="side-nav width-100">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'index' %}" >Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);" data-scroll-nav="1">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);" data-scroll-nav="2">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);" data-scroll-nav="3">El Chef</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);" data-scroll-nav="5">La comida</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:void(0);" data-scroll-nav="7">Contactanos</a>
+                            </li>                       
+                        </ul>
+                    </nav>
+    
+                    <div class="side-footer width-100">
+                        <div class="social-links">
+                            <a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-twitter"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- End sidemenu -->
+        <!-- close sidemenu -->
+        <a id="close_sidebar" href="javascript:void(0);"></a>
+        <!-- End Sidemenu -->
+
+        <div class="arrow">
+            <a href="javascript:void(0);" data-scroll-nav="1" class="">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+
+    </header>
+    {% block content %}
+    {% endblock %}
+
+    <footer class="bg-black" data-scroll-index="7" data-overlay-dark="0" data-background="img/black_twill.png">
+
+        <div class="footer-top text-center text-extra-light-gray padding-90px-tb md-padding-70px-tb sm-padding-50px-tb">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 xs-margin-20px-bottom">
+                        <h4 class="text-white font-size18 xs-font-size16 no-margin opacity9">Dirección</h4>
+                        <div class="separator-line-verticle-small-thick bg-theme center-col margin-10px-top margin-20px-bottom xs-margin-15px-bottom width-15"></div>
+                        <p class="no-margin-bottom width-45 md-width-65 xs-width-100 text-center center-col">Calle Barranco Azul 5961, Parque Industrial Aeropuerto, 32685 Cd Juárez, México.</p>
+                    </div>
+
+                    <div class="col-md-4 xs-margin-20px-bottom">
+                        <h4 class="text-white font-size18 xs-font-size16 no-margin opacity9">Abierto</h4>
+                        <div class="separator-line-verticle-small-thick bg-theme center-col margin-10px-top margin-20px-bottom xs-margin-15px-bottom width-15"></div>
+                        <p class="no-margin-bottom width-85 md-width-100 text-center center-col"><strong>Lunes - Jueves</strong> 1:00 PM - 11:00 PM</p>
+                        <p class="no-margin-bottom width-85 md-width-100 text-center center-col"><strong>Viernes - Domingo</strong> 12:00 AM - 2:00 AM</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 class="text-white font-size18 xs-font-size16 no-margin opacity9">Contacto</h4>
+                        <div class="separator-line-verticle-small-thick bg-theme center-col margin-10px-top margin-20px-bottom xs-margin-15px-bottom width-15"></div>
+                        <p class="no-margin-bottom">(+1) 999 999 999</p>
+                        <p class="no-margin-bottom">msoft07@cenaltec.edu.mx</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom padding-20px-tb sm-padding-15px-tb bg-black border-top border-color-light-white">
+            <div class="container">
+                <div class="row">
+
+                    <!-- start copyright link -->
+                    <div class="col-md-6 xs-text-center xs-margin-10px-bottom">
+                        <span class="font-size12 letter-spacing-1 text-uppercase text-extra-light-gray">© 2018 Proyecto Web CENALTEC Cd.Juarez</span>
+                    </div>
+                    <!-- end copyright link -->
+
+                    <!-- start social media link -->
+                    <div class="col-md-6 text-right xs-text-center">
+                        <div class="footer-social">
+                            <a href="javascript:void(0);"><i class="fab fa-facebook-f"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-twitter"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-dribbble"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-youtube"></i></a>
+                            <a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- end social media link -->
+                </div>
+            </div>
+        </div>
+        <div id="back-to-top" class="back-to-top reveal">
+            <i class="fa fa-angle-up"></i>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/core.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/mailform/jquery.form.min.js' %}"></script>
+    <script src="{% static 'js/mailform/jquery.rd-mailform.min.c.js' %}"></script>
+</body>
+
+</html>

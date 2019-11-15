@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} | Reservación {% endblock %}
+{% block content%}
+
+<section class="position-relative bg-black" data-scroll-index="4" data-overlay-dark="0"
+    data-background="{% static 'img/black_twill.png' %}"
+    style="background-image: url(&quot;{% static 'img/black_twill.png' %}&quot;);">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="padding-70px-right md-padding-50px-right sm-padding-30px-right xs-no-padding-right">
+
+                    <div class="section-heading left half xs-text-center xs-margin-30px-bottom">
+                        <div class="title-font font-size22 text-theme-color">Reservación</div>
+                        <h4 class="text-white opacity9">Aparta la mesa</h4>
+                    </div>
+
+                    {% include 'partials/_alerts.html' %}
+                    <form method="post" action="{% url 'reserve'%}" class="off2 rd-mailform">
+                        {% csrf_token %}
+                        <input type="hidden" name="form-type" value="contact">
+                        <div class="row">
+                            <div class="col-md-12 mfInput">
+                                <input type="text" name="name" data-constraints="@LettersOnly @NotEmpty"
+                                    {% if full_name %} value="{{ full_name }}" {% endif%}>
+                                <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                    class="mfPlaceHolder">Nombre (completo):</span></div>
+
+                            <div class="col-md-12 mfInput">
+                                <input type="text" name="email" data-constraints="@Email @NotEmpty" {% if email %}
+                                    value="{{ email }}" {% endif%}>
+                                <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                    class="mfPlaceHolder">Email:</span></div>
+
+                            <div class="col-md-12">
+
+                                <div class="row">
+                                    <div class="col-md-6 no-padding-right xs-padding-15px-right mfInput">
+                                        <input type="text" name="phone" data-constraints="@Phone" {% if phone %}
+                                        value="{{ phone }}" {% endif%}>
+                                        <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                            class="mfPlaceHolder">Teléfono:</span></div>
+                                    <div class="col-md-6 mfInput">
+                                        <input type="text" name="persons" data-constraints="@NumbersOnly @NotEmpty" {% if persons %}
+                                        value="{{ persons }}" {% endif%}>
+                                        <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                            class="mfPlaceHolder">Personas:</span></div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="row">
+                                    <div class="col-md-6 no-padding-right xs-padding-15px-right mfInput">
+                                        <input type="text" name="date" data-provide="datepicker"
+                                            data-constraints="@Date @NotEmpty" {% if date %}
+                                            value="{{ date }}" {% endif%}>
+                                        <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                            class="mfPlaceHolder">Fecha:</span></div>
+                                    <div class="col-md-6 mfInput">
+                                        <input id="time-input" type="text" name="clockpicker"
+                                            data-constraints="@NotEmpty" {% if clockpicker %}
+                                            value="{{ clockpicker }}" {% endif%}>
+                                        <span class="mfValidation"></span><span
+                                            class="mfIcon default"><span></span></span><span
+                                            class="mfPlaceHolder default">Hora</span></div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 mfInput">
+                                <textarea name="message" rows="5" data-constraints="@NotEmpty">
+                                        {% if message %}
+                                            {{ message }}
+                                        {% endif %}
+                                </textarea>
+                                <span class="mfValidation"></span><span class="mfIcon"><span></span></span><span
+                                    class="mfPlaceHolder">Anotaciones:</span></div>
+                            <div class="mfControls col-md-12">
+                                <button type="submit" class="btn book-now mfProgress"><span class="cnt">Reservar
+                                        ahora!</span><span class="loader"></span><span class="msg"></span></button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-img cover-background width-50 position-absolute position-right position-top height-100 xs-display-none"
+        data-overlay-dark="0" data-background="{% static 'img/bg-book-now.jpg' %}"
+        style="background-image: url(&quot;{% static 'img/bg-book-now.jpg' %}&quot;);">
+
+    </div>
+
+</section>
+
+{% endblock %}
