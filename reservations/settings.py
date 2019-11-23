@@ -25,7 +25,7 @@ SECRET_KEY = '(cmj3qf9g-4d4c6f-q!gnm^&x%6gzd60h7mh2u1k!eahm8pzu^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['reservacion-cenaltec.azurewebsites.net']
 
 
 # Application definition
